@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>게시판</h1>
+  {% for notice_list in notice %}
+    <a href="{% url 'index:detail' notice_list.pk %}">
+    <p>{{ notice_list.title }}</p>
+    </a>
+  {% endfor %}
+{% endblock  %}
