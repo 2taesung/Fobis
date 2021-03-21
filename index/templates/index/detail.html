@@ -2,7 +2,14 @@
 
 {% block content %}
   <h1>detail</h1>
-  {% for notice_list in notice %}
-    {{ notice_list.title }}
-  {% endfor %}
-{% endblock  %}
+  <hr>
+  {% comment %} {% for notice_list in notice %} {% endcomment %}
+  <h2>제목 : {{ notice.title }}</h2>
+  <hr>
+  <h3>내용 : {{ notice.content }}</h3>
+    {% comment %} {{ notice_list.content }} {% endcomment %}
+  {% comment %} {% endfor %} {% endcomment %}
+  <a href="{% url 'index:update' notice.pk %}"><h3>수정하기</h3></a>
+  <a href="{% url 'index:delete' notice.pk %}"><h3>삭제하기</h3></a>
+  
+{% endblock %}
